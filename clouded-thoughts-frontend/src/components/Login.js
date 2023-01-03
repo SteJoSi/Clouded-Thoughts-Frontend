@@ -36,6 +36,9 @@ function Login() {
         <div>
             <input type="submit" value="Submit" />
         </div>
+        <div>
+            <input type="submit" value="Sign Up" />
+        </div>
       </form>
     </div>
   )

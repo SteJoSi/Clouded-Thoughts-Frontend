@@ -15,6 +15,7 @@ code {
 #main {
   font-family: 'Chewy', cursive;
   font-size: 150px;
+  text-shadow: 0 0 20px skyblue;
   margin-bottom: 60px;
   display: flex;
   align-items: center;
@@ -48,11 +49,16 @@ input {
 
 input[type=submit] {
   border-radius: 4px;
-  border: 2px solid gray;
+  border: 2px solid skyblue;
   font-family: 'Amatic SC', cursive;
   font-size: 20px;
   height: 50px;
   width: 15%;
   margin: 20px;
   padding: 0px;
+}
+
+input[type=text] {
+  border-radius: 4px;
+  border: 2px solid skyblue;
 }

@@ -15,9 +15,9 @@ function NavBar() {
     <div>
       <nav>
             <NavLink exact to="/" style={navStyles}>Home</NavLink>
-            <NavLink exact to="/posts" style={navStyles}>Posts</NavLink>
-            <NavLink exact to="/create" style={navStyles}>Create</NavLink>
-            <NavLink exact to="/logout" style={navStyles}>Logout</NavLink>
+            {/* <NavLink exact to="/posts" style={navStyles}>Posts</NavLink> */}
+            {/* <NavLink exact to="/create" style={navStyles}>Create</NavLink> */}
+            {/* <NavLink exact to="/logout" style={navStyles}>Logout</NavLink> */}
         </nav>
     </div>
   )
