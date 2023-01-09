@@ -1,35 +1,34 @@
 import './App.css';
 import React from 'react';
-// import { Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 import Home from "./components/Home";
-// import NavBar from './components/NavBar';
+import NavBar from './components/NavBar';
 
 function App() {
   return (
     <div>
-      <Home />
-      {/* <NavBar /> 
+      <NavBar /> 
       <div>
         <Switch>
-          <Route path="/logout">
+          {/* <Route path="/logout">
             <Logout />
-          </Route>
+          </Route> */}
 
-          <Route path="/create">
+          {/* <Route path="/create">
             <Create />
-          </Route>
+          </Route> */}
 
-          <Route path="/posts">
+          {/* <Route path="/posts">
             <Posts />
-          </Route>
+          </Route> */}
 
           <Route exact path="/">
             <Home />
           </Route>
 
         </Switch>
-      </div> */}
+      </div>
     </div>
   );
 }
