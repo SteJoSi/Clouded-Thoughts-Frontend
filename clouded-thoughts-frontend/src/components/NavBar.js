@@ -11,16 +11,16 @@ const navStyles = {
 }
 
 function NavBar() {
-  return (
-    <div>
-      <nav>
-            <Link exact to="/" style={navStyles}>Home</Link>
-            {/* <NavLink exact to="/posts" style={navStyles}>Posts</NavLink> */}
-            {/* <NavLink exact to="/create" style={navStyles}>Create</NavLink> */}
-            {/* <NavLink exact to="/logout" style={navStyles}>Logout</NavLink> */}
-        </nav>
-    </div>
-  )
+    return (
+        <div>
+            <nav>
+                <Link exact to="/" style={navStyles}>Home</Link>
+                <Link exact to="/profile" style={navStyles}>Profile</Link>
+                <Link exact to="/newEntry" style={navStyles}>New Entry</Link>
+                <Link exact to="/logout" style={navStyles}>Sign Out</Link>
+            </nav>
+        </div>
+    )
 }
 
 export default NavBar;

@@ -1,4 +1,5 @@
 // username & password with a sign up button to create a profile
+// signin button takes you to profile
 
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
