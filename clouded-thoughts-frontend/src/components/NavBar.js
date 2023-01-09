@@ -7,17 +7,17 @@ const navStyles = {
     padding: "12px 20px",
     margin: "0px 10px 0px 10px",
     textDecoration: "none",
-    color: "black",
+    color: "black"
 }
 
 function NavBar() {
     return (
         <div>
-            <nav>
-                <Link exact to="/" style={navStyles}>Home</Link>
-                <Link exact to="/profile" style={navStyles}>Profile</Link>
-                <Link exact to="/newEntry" style={navStyles}>New Entry</Link>
-                <Link exact to="/logout" style={navStyles}>Sign Out</Link>
+            <nav id="navbar">
+                <Link exact to="/" style={navStyles}><ion-icon name="home"></ion-icon> Home</Link>
+                <Link exact to="/profile" style={navStyles}><ion-icon name="person"></ion-icon>Profile</Link>
+                <Link exact to="/newEntry" style={navStyles}><ion-icon name="create"></ion-icon>New Entry</Link>
+                <Link exact to="/logout" style={navStyles}><ion-icon name="walk"></ion-icon>Sign Out</Link>
             </nav>
         </div>
     )

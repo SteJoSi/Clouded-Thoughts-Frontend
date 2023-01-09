@@ -17,13 +17,10 @@ function App() {
             <Logout />
           </Route> */}
 
-          {/* <Route path="/create">
-            <Create />
-          </Route> */}
+          <Route path="/profile">
+            <Profile />
+          </Route>
 
-          {/* <Route path="/posts">
-            <Posts />
-          </Route> */}
           <Route path="/newEntry">
             <NewEntry />
           </Route>

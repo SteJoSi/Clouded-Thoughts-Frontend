@@ -15,7 +15,7 @@ function NewEntry() {
             </div>
             <form id="newEntry">
                 <div>
-                    <p>Date</p>
+                    <label>Date: </label>
                     <input
                         type="text"
                         name="date"
@@ -24,7 +24,7 @@ function NewEntry() {
                     />
                 </div>
                 <div>
-                    <p>Title</p>
+                    <label>Title: </label>
                     <input
                         type="text"
                         name="title"
@@ -33,16 +33,15 @@ function NewEntry() {
                     />
                 </div>
                 <div>
-                    <p>Write away...</p>
-                    <input
+                    <p>Write Away...</p>
+                    <textarea
                         type="body"
-                        name="body"
                         value={body}
-                        onChange={(e) => setBody(e.target.value)}
+                        onChange={(e) => setBody(e.target.value)} 
                     />
                 </div>
                 <div>
-                    <input type="submit" value="Create Account!" />
+                    <input type="submit" value="Post New Entry!" />
                 </div>
             </form>
         </div>
