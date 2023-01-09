@@ -6,7 +6,8 @@ function PostContainer() {
             <h1 id="profileSubHeading">Welcome, User!</h1>
             <div id="entryContainer">
                 <p>This is where the entrys will appear</p>
-                <btn><ion-icon name="pencil"></ion-icon><ion-icon name="trash"></ion-icon></btn>
+                {/* make these individual buttons on the same line and functional */}
+                <button><ion-icon name="pin"></ion-icon><ion-icon name="pencil"></ion-icon><ion-icon name="trash"></ion-icon></button>
             </div>
         </div>
     )

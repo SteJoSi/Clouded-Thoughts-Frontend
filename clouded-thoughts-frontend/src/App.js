@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import NavBar from './components/NavBar';
 import Profile from './components/Profile';
 import NewEntry from './components/NewEntry';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
 
         </Switch>
       </div>
+      <Footer />
     </div>
   );
 }
