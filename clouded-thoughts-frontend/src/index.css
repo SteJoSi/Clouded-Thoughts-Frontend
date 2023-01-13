@@ -36,16 +36,15 @@ nav {
   font-size: 19px;
 }
 
-#login {
+#account {
   text-align: center;
   padding-top: 1px;
   font-family: 'Amatic SC', cursive;
   font-size: 30px;
 }
 
-#loginTitle {
+#accountTitle {
   text-align: center;
-  /* padding: px; */
   margin: 20px;
   font-family: 'Amatic SC', cursive;
   font-size: 30px;
@@ -56,6 +55,7 @@ input {
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
+  font-family: 'Amatic SC', cursive;
 }
 
 input[type=submit] {
@@ -72,6 +72,7 @@ input[type=submit] {
 input[type=text] {
   border-radius: 4px;
   border: 2px solid rgb(0, 183, 255);
+  font-family: 'Amatic SC', cursive;
 }
 
 #newEntry {

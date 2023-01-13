@@ -5,6 +5,7 @@ import Header from './Header'
 function NewEntry() {
     const [date, setDate] = useState("")
     const [title, setTitle] = useState("")
+    const [user, setUser] = useState("")
     const [body, setBody] = useState("")
 
     return (
@@ -14,6 +15,15 @@ function NewEntry() {
                 <h1>New Entry</h1>
             </div>
             <form id="newEntry">
+                <div>
+                    <label>User: </label>
+                    <input
+                        type="text"
+                        name="user"
+                        value={user}
+                        onChange={(e) => setUser(e.target.value)}
+                    />
+                </div>
                 <div>
                     <label>Date: </label>
                     <input
@@ -37,7 +47,7 @@ function NewEntry() {
                     <textarea
                         type="body"
                         value={body}
-                        onChange={(e) => setBody(e.target.value)} 
+                        onChange={(e) => setBody(e.target.value)}
                     />
                 </div>
                 <div>

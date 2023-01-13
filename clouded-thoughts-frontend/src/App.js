@@ -14,11 +14,7 @@ function App() {
       <NavBar />
       <div>
         <Switch>
-          {/* <Route path="/logout">
-            <Logout />
-          </Route> */}
-
-          <Route path="/profile">
+          <Route path="/users">
             <Profile />
           </Route>
 

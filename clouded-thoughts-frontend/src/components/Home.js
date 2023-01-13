@@ -1,13 +1,13 @@
 import React from 'react';
 
+import CreateAccount from './CreateAccount';
 import Header from './Header';
-import Login from './Login';
 
 function Home() {
   return (
     <div>
       <Header />
-      <Login />
+      <CreateAccount />
     </div>
   )
 }

@@ -3,7 +3,7 @@ import React from 'react'
 function PostContainer() {
     return (
         <div>
-            <h1 id="profileSubHeading">Welcome, User!</h1>
+            <h1 id="profileSubHeading">Welcome!</h1>
             <div id="entryContainer">
                 <p>This is where the entrys will appear</p>
                 {/* make these individual buttons on the same line and functional */}
@@ -13,4 +13,4 @@ function PostContainer() {
     )
 }
 
-export default PostContainer
+export default PostContainer;

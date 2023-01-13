@@ -4,13 +4,14 @@ function CreateAccount() {
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
+    const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
-    const [confirmPassword, setConfirmPassword] = useState("")
+    
 
   return (
     <div>
        <div id="accountTitle">
-                <h1>Create Account</h1>
+                <h1>Sign Up Now!</h1>
             </div>
             <form id="account">
                 <div>
@@ -41,21 +42,21 @@ function CreateAccount() {
                     />
                 </div>
                 <div>
+                    <p>Username</p>
+                    <input
+                        type="text"
+                        name="username"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                    />
+                </div>
+                <div>
                     <p>Password</p>
                     <input
                         type="text"
                         name="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
-                    />
-                </div>
-                <div>
-                    <p>Confirm Password</p>
-                    <input
-                        type="text"
-                        name="confirmPassword"
-                        value={confirmPassword}
-                        onChange={(e) => setConfirmPassword(e.target.value)}
                     />
                 </div>
                 <div>
