@@ -3,7 +3,7 @@ import React from 'react'
 function PostContainer() {
     return (
         <div>
-            <h1 id="profileSubHeading">Welcome!</h1>
+            <h1 id="profileSubHeading">Read away...</h1>
             <div id="entryContainer">
                 <p>This is where the entrys will appear</p>
                 {/* make these individual buttons on the same line and functional */}

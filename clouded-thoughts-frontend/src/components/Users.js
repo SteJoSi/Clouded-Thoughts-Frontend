@@ -12,6 +12,7 @@ function Users() {
     return (
         <div>
             <Header />
+            <h1 id="profileSubHeading">Welcome!</h1>
             {/* display all users for user here */}
         </div>
     )
