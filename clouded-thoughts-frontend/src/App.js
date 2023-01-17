@@ -4,7 +4,8 @@ import { Route, Switch } from 'react-router-dom';
 
 import Home from "./components/Home";
 import NavBar from './components/NavBar';
-import Profile from './components/Profile';
+import Posts from './components/Posts';
+import Users from './components/Users';
 import NewEntry from './components/NewEntry';
 import Footer from './components/Footer';
 
@@ -15,15 +16,15 @@ function App() {
       <div>
         <Switch>
           <Route path="/users">
-            <Profile />
+            <Users />
           </Route>
 
           <Route path="/newEntry">
             <NewEntry />
           </Route>
 
-          <Route path="/profile">
-            <Profile />
+          <Route path="/posts">
+            <Posts />
           </Route>
 
           <Route exact path="/">
