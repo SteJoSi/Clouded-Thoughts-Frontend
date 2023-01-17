@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 function CreateAccount() {
     const [firstName, setFirstName] = useState("")
@@ -6,6 +7,33 @@ function CreateAccount() {
     const [email, setEmail] = useState("")
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+
+    const history = useHistory()
+
+    function handleFormSubmit(e) {
+        e.preventDefault()
+        const accountFormData = {
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            username: username,
+            password: password
+        }
+        fetch("http://localhost:9292/users", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(accountFormData),
+        })
+            .then((r) => r.json())
+            .then((newUser) => {
+                console.log("user", newUser)
+                // addCow(newCow)
+                history.push("/users");
+
+            })
+    }
     
 
   return (
@@ -13,7 +41,7 @@ function CreateAccount() {
        <div id="accountTitle">
                 <h1>Sign Up Now!</h1>
             </div>
-            <form id="account">
+            <form id="account" onSubmit={handleFormSubmit}>
                 <div>
                     <p>First Name</p>
                     <input
