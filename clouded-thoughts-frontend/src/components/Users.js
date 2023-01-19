@@ -7,6 +7,7 @@
 import React from 'react'
 
 import Header from './Header';
+import UserContainer from '../containers/UserContainer';
 
 function Users({users}) {
     return (
