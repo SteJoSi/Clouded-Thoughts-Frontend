@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Home from "./components/Home";
@@ -10,13 +10,26 @@ import NewEntry from './components/NewEntry';
 import Footer from './components/Footer';
 
 function App() {
+  const [users, setUsersData] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:9292/users")
+      .then(resp => resp.json())
+      .then((userData) => {
+        setUsersData(userData)
+      });
+  }, []);
+
+  function addUser(newUser) {
+    setUsersData([newUser, ...users])
+  }
   return (
     <div>
       <NavBar />
       <div>
         <Switch>
           <Route path="/users">
-            <Users />
+            <Users users={users}/>
           </Route>
 
           <Route path="/newEntry">
@@ -28,7 +41,7 @@ function App() {
           </Route>
 
           <Route exact path="/">
-            <Home />
+            <Home addUser={addUser}/>
           </Route>
 
         </Switch>

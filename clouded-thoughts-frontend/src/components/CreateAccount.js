@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-function CreateAccount() {
+function CreateAccount({addUser}) {
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
@@ -29,7 +29,7 @@ function CreateAccount() {
             .then((r) => r.json())
             .then((newUser) => {
                 console.log("user", newUser)
-                // addCow(newCow)
+                addUser(newUser)
                 history.push("/users");
 
             })

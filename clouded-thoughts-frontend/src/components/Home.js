@@ -3,11 +3,11 @@ import React from 'react';
 import CreateAccount from './CreateAccount';
 import Header from './Header';
 
-function Home() {
+function Home({addUser}) {
   return (
     <div>
       <Header />
-      <CreateAccount />
+      <CreateAccount addUser={addUser} />
     </div>
   )
 }

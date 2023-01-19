@@ -8,12 +8,19 @@ import React from 'react'
 
 import Header from './Header';
 
-function Users() {
+function Users({users}) {
     return (
         <div>
             <Header />
             <h1 id="profileSubHeading">Welcome!</h1>
-            {/* display all users for user here */}
+            <div id="userDiv">
+                {users.map((users) => (
+                    <UserContainer 
+                        key={users.id}
+                        users={users}
+                    />
+                ))}
+            </div>
         </div>
     )
 }
