@@ -81,7 +81,7 @@ function CreateAccount({addUser}) {
                 <div>
                     <p>Password</p>
                     <input
-                        type="text"
+                        type="password"
                         name="password"
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}

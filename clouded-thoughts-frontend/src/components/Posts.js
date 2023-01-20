@@ -5,7 +5,7 @@ function Posts() {
   return (
     <div>
         <PostContainer />
-      <p>See posts from users here</p>
+      <p>Show all the posts and when created regardless of users</p>
     </div>
   )
 }

@@ -7,7 +7,8 @@ function NewEntry() {
     const [title, setTitle] = useState("")
     const [user, setUser] = useState("")
     const [body, setBody] = useState("")
-
+    // make drop down for users (select tag), list of users are 1 option tag
+    
     return (
         <div>
             <Header />

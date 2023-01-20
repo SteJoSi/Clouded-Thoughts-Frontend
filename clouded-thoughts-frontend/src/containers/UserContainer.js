@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function UserContainer({ users }) {
   return (
+    // use link component to display users
     <div id="userContainer" key={users.id}>
-      <a className="username" href="http://localhost:3000/posts"><ion-icon name="person"></ion-icon>{users.username}</a>
+      <Link className="username"><ion-icon name="person"></ion-icon>{users.username}</Link>
     </div>
   )
 }
