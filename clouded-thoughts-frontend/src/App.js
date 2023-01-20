@@ -23,6 +23,7 @@ function App() {
   function addUser(newUser) {
     setUsersData([newUser, ...users])
   }
+
   return (
     <div>
       <NavBar />
