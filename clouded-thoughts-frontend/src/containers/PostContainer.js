@@ -1,6 +1,6 @@
 import React from 'react'
 
-function PostContainer() {
+function PostContainer({posts}) {
     return (
         <div>
             <h1 id="profileSubHeading">Read away...</h1>
