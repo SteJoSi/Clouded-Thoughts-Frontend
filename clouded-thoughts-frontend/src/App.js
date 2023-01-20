@@ -11,12 +11,21 @@ import Footer from './components/Footer';
 
 function App() {
   const [users, setUsersData] = useState([]);
+  const [posts, setPostsData] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:9292/users")
       .then(resp => resp.json())
       .then((userData) => {
         setUsersData(userData)
+      });
+  }, []);
+
+  useEffect(() => {
+    fetch("http://localhost:9292/posts")
+      .then(resp => resp.json())
+      .then((postData) => {
+        setPostsData(postData)
       });
   }, []);
 
@@ -38,7 +47,7 @@ function App() {
           </Route>
 
           <Route path="/posts">
-            <Posts />
+            <Posts posts={posts}/>
           </Route>
 
           <Route exact path="/">
