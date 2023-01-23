@@ -47,7 +47,7 @@ function App() {
           </Route>
 
           <Route path="/posts">
-            <Posts posts={posts}/>
+            <Posts posts={posts} users={users}/>
           </Route>
 
           <Route exact path="/">
