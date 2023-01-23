@@ -148,14 +148,14 @@ textarea {
   font-family: 'Amatic SC', cursive;
   font-size: 30px;
   padding: 10px 10px 20px;
-  /* width: 600;
-  height: 800; */
   display: inline-grid;
   margin-bottom: 50px;
   background-color: rgba(135, 207, 235, 0.419);
   box-shadow: rgb(0, 183, 255);
   border: black solid 2px;
   border-radius: 8px;
+  color: black;
+
 }
 
 #userDiv{
@@ -164,4 +164,15 @@ textarea {
   justify-content: space-around;
   align-content: stretch;
   flex-direction: column;
+}
+.username{
+  color: black;
+}
+
+.username:hover{
+  color: white
+}
+
+.username:active{
+  color: rgb(0, 183, 255)
 }

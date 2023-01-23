@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 import Header from './Header'
 
@@ -8,14 +9,40 @@ function NewEntry() {
     const [user, setUser] = useState("")
     const [body, setBody] = useState("")
     // make drop down for users (select tag), list of users are 1 option tag
+
+    const history = useHistory()
     
+    function handleSubmit(e) {
+        e.preventDefault()
+        const formData = {
+            date: date,
+            title: title,
+            user: user,
+            body: body
+        }
+        fetch("http://localhost:9292/posts", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+        })
+            .then((r) => r.json())
+            .then((newPost) => {
+                console.log('new post', newPost)
+                // addPost(newPost)
+                history.push("/posts");
+
+            })
+    }
+
     return (
         <div>
             <Header />
             <div id="newEntry">
                 <h1>New Entry</h1>
             </div>
-            <form id="newEntry">
+            <form id="newEntry" onSubmit={handleSubmit}>
                 <div>
                     <label>User: </label>
                     <input
