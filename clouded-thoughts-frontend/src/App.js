@@ -33,6 +33,10 @@ function App() {
     setUsersData([newUser, ...users])
   }
 
+  function addPost(newPost) {
+    setPostsData([newPost, ...posts])
+  }
+
   return (
     <div>
       <NavBar />
@@ -43,7 +47,7 @@ function App() {
           </Route>
 
           <Route path="/newEntry">
-            <NewEntry />
+            <NewEntry addPost={addPost} />
           </Route>
 
           <Route path="/posts">

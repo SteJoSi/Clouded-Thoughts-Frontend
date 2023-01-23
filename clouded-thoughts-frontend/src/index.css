@@ -113,10 +113,10 @@ textarea {
 
 .postBtn{
   background: none;
-  display: flex;
+  /* display: flex;
   margin: auto;
   border: none;
-  align-items: left;
+  align-items: left; */
 }
 
 #postDiv {

@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom'
 
 import Header from './Header'
 
-function NewEntry() {
+function NewEntry({addPost}) {
     const [date, setDate] = useState("")
     const [title, setTitle] = useState("")
     const [user, setUser] = useState("")
@@ -30,7 +30,7 @@ function NewEntry() {
             .then((r) => r.json())
             .then((newPost) => {
                 console.log('new post', newPost)
-                // addPost(newPost)
+                addPost(newPost)
                 history.push("/posts");
 
             })
