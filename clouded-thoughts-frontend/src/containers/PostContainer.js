@@ -1,15 +1,14 @@
 import React from 'react'
 
-function PostContainer({posts, users}) {
+function PostContainer({posts}) {
     return (
         <div>
-            <h1 id="profileSubHeading">Read away...</h1>
-            <div className="entryContainer" key={posts.id}>
-            <h3 className="username"><ion-icon name="person"></ion-icon>{users.username}</h3>
-            <p>{posts.date}</p>
-            <p>{posts.title}</p>
-            <div>{posts.body}</div>
-            <button><ion-icon name="pin"></ion-icon><ion-icon name="pencil"></ion-icon><ion-icon name="trash"></ion-icon></button>
+            <div id="entryContainer" key={posts.id}>
+            {/* <h3 className="username"><ion-icon name="person"></ion-icon>{users.username}</h3> */}
+            <p className='postInfo'>Date: {posts.date}</p>
+            <p className='postInfo'>Title: {posts.title}</p>
+            <div className='postInfo'>{posts.body}</div>
+            <button className='postBtn'><ion-icon name="pin"></ion-icon></button><button className='postBtn'><ion-icon name="pencil"></ion-icon></button><button className='postBtn'><ion-icon name="trash"></ion-icon></button>
         </div>
         </div>
     )

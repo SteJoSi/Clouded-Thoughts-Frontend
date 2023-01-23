@@ -94,22 +94,74 @@ textarea {
 }
 
 #entryContainer {
-  padding: 10px 10px 0px;
-  width: 300px;
-  height: 300px;
+  padding: 10px 10px 20px;
+  width: 600;
+  height: 800;
   display: inline-grid;
   margin-bottom: 50px;
   background-color: rgba(135, 207, 235, 0.419);
   box-shadow: rgb(0, 183, 255);
   border: black solid 2px;
   border-radius: 8px;
-  font-family: 'Amatic SC', cursive;
-  font-size: 30px;
 }
 
-#profileSubHeading{
+.postInfo{
+  font-family: 'Amatic SC', cursive;
+  font-size: 30px;
+  margin: 5px;
+}
+
+.postBtn{
+  background: none;
+  display: flex;
+  margin: auto;
+  border: none;
+  align-items: left;
+}
+
+#postDiv {
+  /* align-items: center; */
+  justify-content: space-around;
+  align-content: stretch;
+  flex-direction: column;
+
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 10px;
+
+  grid-row-gap: 0px;
+  padding: 5px;
+  column-gap: 1rem;
+  row-gap: 1rem;
+}
+
+#profileSubHeading {
   font-family: 'Amatic SC', cursive;
   font-size: 100px;
   text-shadow: 0 0 100px rgb(0, 183, 255);
   text-align: center;
+}
+
+#userContainer{
+  text-align: center;
+  margin: 20px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 30px;
+  padding: 10px 10px 20px;
+  /* width: 600;
+  height: 800; */
+  display: inline-grid;
+  margin-bottom: 50px;
+  background-color: rgba(135, 207, 235, 0.419);
+  box-shadow: rgb(0, 183, 255);
+  border: black solid 2px;
+  border-radius: 8px;
+}
+
+#userDiv{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-content: stretch;
+  flex-direction: column;
 }
