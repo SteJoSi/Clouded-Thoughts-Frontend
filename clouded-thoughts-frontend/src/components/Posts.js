@@ -2,14 +2,7 @@ import React from 'react'
 import PostContainer from '../containers/PostContainer';
 import Header from './Header';
 
-function Posts({ posts }) {
-  function handleDeleteClick() {
-    fetch(`http://localhost:9292/posts/${posts.id}`, {
-      method: "DELETE",
-    })
-    .then((r) => r.json())
-    .then(() => console.log('deleted!'));
-  }
+function Posts({ posts, onDeletePost, onUpdatedPost }) {
 
   return (
     <div>
@@ -20,6 +13,8 @@ function Posts({ posts }) {
           <PostContainer
             key={posts.id}
             posts={posts}
+            onDeletePost={onDeletePost}
+            onUpdatedPost={onUpdatedPost}
           />
         )
         )}

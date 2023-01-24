@@ -37,13 +37,30 @@ function App() {
     setPostsData([newPost, ...posts])
   }
 
+  function handleDeletePost(deletedPost) {
+    const updatedPosts = posts.filter((post) => post.id !== deletedPost.id);
+    setPostsData(updatedPosts);
+  }
+
+  function handleUpdatePost(updatedPost) {
+    console.log("Update Post:", updatedPost);
+    const updatedPosts = posts.map((post) => {
+      if (post.id === updatedPost.id) {
+        return updatedPost;
+      } else {
+        return post;
+      }
+    });
+    setPostsData(updatedPosts);
+  }
+
   return (
     <div>
       <NavBar />
       <div>
         <Switch>
           <Route path="/users">
-            <Users users={users}/>
+            <Users users={users} />
           </Route>
 
           <Route path="/newEntry">
@@ -51,11 +68,11 @@ function App() {
           </Route>
 
           <Route path="/posts">
-            <Posts posts={posts}/>
+            <Posts posts={posts} onDeletePost={handleDeletePost} onUpdatedPost={handleUpdatePost}/>
           </Route>
 
           <Route exact path="/">
-            <Home addUser={addUser}/>
+            <Home addUser={addUser} />
           </Route>
 
         </Switch>
