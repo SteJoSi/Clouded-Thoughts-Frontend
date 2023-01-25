@@ -64,7 +64,7 @@ function App() {
           </Route>
 
           <Route path="/newEntry">
-            <NewEntry addPost={addPost} />
+            <NewEntry addPost={addPost} users={users} />
           </Route>
 
           <Route path="/posts">

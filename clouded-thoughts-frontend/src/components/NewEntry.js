@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import Header from './Header'
 
-function NewEntry({addPost}) {
+function NewEntry({ addPost, users }) {
     const [date, setDate] = useState("")
     const [title, setTitle] = useState("")
     const [user, setUser] = useState("")
@@ -11,7 +11,7 @@ function NewEntry({addPost}) {
     // make drop down for users (select tag), list of users are 1 option tag
 
     const history = useHistory()
-    
+
     function handleSubmit(e) {
         e.preventDefault()
         const formData = {
@@ -36,6 +36,10 @@ function NewEntry({addPost}) {
             })
     }
 
+    // function handleChange(event) {
+    //     this.setState({value: event.target.value});
+    //   }
+
     return (
         <div>
             <Header />
@@ -45,12 +49,13 @@ function NewEntry({addPost}) {
             <form id="newEntry" onSubmit={handleSubmit}>
                 <div>
                     <label>User: </label>
-                    <input
-                        type="text"
-                        name="user"
-                        value={user}
-                        onChange={(e) => setUser(e.target.value)}
-                    />
+                        <select onChange={(e) => setUser(e.target.value)}>
+                            {users.map((user) => {
+                                console.log('user', user)
+                                return ( 
+                                <option value={user.id}>{user.username}</option>
+                            )})}
+                        </select>
                 </div>
                 <div>
                     <label>Date: </label>
