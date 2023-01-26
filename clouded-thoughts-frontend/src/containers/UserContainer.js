@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function UserContainer({ users, handleClick }) {
+function UserContainer({ users }) {
   return (
     <div id="userContainer" key={users.id}>
-      <Link className="username" handleClick={handleClick}><ion-icon name="person"></ion-icon>{users.username}</Link>
+      <Link className="username"><ion-icon name="person"></ion-icon>{users.username}</Link>
     </div>
   )
 }

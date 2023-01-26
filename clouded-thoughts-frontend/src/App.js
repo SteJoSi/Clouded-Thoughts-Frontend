@@ -7,7 +7,7 @@ import NavBar from './components/NavBar';
 import Posts from './components/Posts';
 import Users from './components/Users';
 import NewEntry from './components/NewEntry';
-import Footer from './components/Footer';
+import UserShow from './components/UserShow';
 
 function App() {
   const [users, setUsersData] = useState([]);
@@ -59,16 +59,27 @@ function App() {
       <NavBar />
       <div>
         <Switch>
+          {/* <Route path="/users/:id">
+            <UserShow users={users} />
+          </Route> */}
+
           <Route path="/users">
             <Users users={users} />
           </Route>
 
           <Route path="/newEntry">
-            <NewEntry addPost={addPost} users={users} />
+            <NewEntry 
+              addPost={addPost} 
+              users={users} 
+            />
           </Route>
 
           <Route path="/posts">
-            <Posts posts={posts} onDeletePost={handleDeletePost} onUpdatedPost={handleUpdatePost}/>
+            <Posts 
+              posts={posts}  
+              onDeletePost={handleDeletePost} 
+              onUpdatedPost={handleUpdatePost} 
+            />
           </Route>
 
           <Route exact path="/">
@@ -77,7 +88,6 @@ function App() {
 
         </Switch>
       </div>
-      <Footer />
     </div>
   );
 }

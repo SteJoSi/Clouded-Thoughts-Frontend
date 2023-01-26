@@ -36,10 +36,6 @@ function NewEntry({ addPost, users }) {
             })
     }
 
-    // function handleChange(event) {
-    //     this.setState({value: event.target.value});
-    //   }
-
     return (
         <div>
             <Header />
