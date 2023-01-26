@@ -13,6 +13,8 @@ function App() {
   const [users, setUsersData] = useState([]);
   const [posts, setPostsData] = useState([]);
 
+  console.log('posts', posts)
+  
   useEffect(() => {
     fetch("http://localhost:9292/users")
       .then(resp => resp.json())

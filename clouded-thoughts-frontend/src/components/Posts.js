@@ -9,10 +9,10 @@ function Posts({ posts, onDeletePost, onUpdatedPost }) {
       <Header />
       <h1 id="profileSubHeading">Read away...</h1>
       <div id="postDiv">
-        {posts.map((posts) => (
+        {posts.map((post) => (
           <PostContainer
-            key={posts.id}
-            posts={posts}
+            key={post.id}
+            post={post}
             onDeletePost={onDeletePost}
             onUpdatedPost={onUpdatedPost}
           />

@@ -1,22 +1,21 @@
 import React from 'react'
 
-function PostContainer({ posts, onDeletePost, onUpdatedPost }) {
+function PostContainer({ post, onDeletePost, onUpdatedPost }) {
     function handleDeleteClick() {
-        fetch(`http://localhost:9292/posts/${posts.id}`, {
+        fetch(`http://localhost:9292/posts/${post.id}`, {
             method: "DELETE",
         })
             .then((r) => r.json())
-            .then(() => onDeletePost(posts));
+            .then(() => onDeletePost(post));
     }
 
     function handleEditPost() {
-        fetch(`http://localhost:9292/posts/${posts.id}`, {
+        fetch(`http://localhost:9292/posts/${post.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                // isInCart: !item.isInCart,
             }),
         })
             .then((r) => r.json())
@@ -25,11 +24,11 @@ function PostContainer({ posts, onDeletePost, onUpdatedPost }) {
 
     return (
         <div>
-            <div id="entryContainer" key={posts.id}>
-                {/* <h3 className="username"><ion-icon name="person"></ion-icon>{users.username}</h3> */}
-                <p className='postInfo'>Date: {posts.date}</p>
-                <p className='postInfo'>Title: {posts.title}</p>
-                <div className='postInfo'>{posts.body}</div>
+            <div id="entryContainer" key={post.id}>
+                <h3 className="username"><ion-icon name="person"></ion-icon>{post.user.username}</h3>
+                <p className='postInfo'>Date: {post.date}</p>
+                <p className='postInfo'>Title: {post.title}</p>
+                <div className='postInfo'>{post.body}</div>
                 <button className='postBtn' onClick={handleEditPost}><ion-icon name="pencil"></ion-icon></button><button className='postBtn' onClick={handleDeleteClick}><ion-icon name="trash"></ion-icon></button>
             </div>
         </div>

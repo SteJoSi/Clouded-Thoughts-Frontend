@@ -17,9 +17,10 @@ function NewEntry({ addPost, users }) {
         const formData = {
             date: date,
             title: title,
-            user: user,
+            user_id: user,
             body: body
         }
+        console.log('NewEntry', user)
         fetch("http://localhost:9292/posts", {
             method: "POST",
             headers: {
@@ -45,11 +46,11 @@ function NewEntry({ addPost, users }) {
             <form id="newEntry" onSubmit={handleSubmit}>
                 <div>
                     <label>User: </label>
-                        <select onChange={(e) => setUser(e.target.value)}>
+                        <select onChange={(e) => setUser(e.target.value)} value={user}>
                             {users.map((user) => {
                                 console.log('user', user)
                                 return ( 
-                                <option value={user.id}>{user.username}</option>
+                                <option value={user.id} key={user.id}>{user.username}</option>
                             )})}
                         </select>
                 </div>
