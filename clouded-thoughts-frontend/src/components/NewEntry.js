@@ -46,9 +46,9 @@ function NewEntry({ addPost, users }) {
             <form id="newEntry" onSubmit={handleSubmit}>
                 <div>
                     <label>User: </label>
-                        <select onChange={(e) => setUser(e.target.value)} value={user}>
+                        <select value={user} onChange={(e) => setUser(e.target.value)} >
                             {users.map((user) => {
-                                console.log('user', user)
+                                // console.log('user', user)
                                 return ( 
                                 <option value={user.id} key={user.id}>{user.username}</option>
                             )})}

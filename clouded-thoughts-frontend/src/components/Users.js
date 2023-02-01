@@ -10,12 +10,7 @@ import React from 'react';
 import Header from './Header';
 import UserContainer from '../containers/UserContainer';
 
-function Users({users}) {
-    // const history = useHistory()
-// this should re-direct to the user that is clicked with their posts displayed
-    // function handleClick() {
-    //     history.push(`/users/${users.id}`);
-    // }
+function Users({ users }) {
 
     return (
         <div>
@@ -26,7 +21,6 @@ function Users({users}) {
                     <UserContainer 
                         key={users.id}
                         users={users}
-                        // handleClick={handleClick}
                     />
                 ))}
             </div>

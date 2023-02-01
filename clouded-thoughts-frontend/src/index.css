@@ -142,7 +142,7 @@ textarea {
   text-align: center;
 }
 
-#userContainer{
+#displayUser{
   text-align: center;
   margin: 20px;
   font-family: 'Amatic SC', cursive;
@@ -175,4 +175,28 @@ textarea {
 
 .username:active{
   color: rgb(0, 183, 255)
+}
+
+#userShow{
+  padding: 10px 10px 20px;
+  width: 600;
+  height: 800;
+  display: inline-grid;
+  margin-bottom: 50px;
+  background-color: rgba(135, 207, 235, 0.419);
+  box-shadow: rgb(0, 183, 255);
+  border: black solid 2px;
+  border-radius: 8px;
+}
+
+.showUser{
+padding: 10px 10px 20px;
+width: 600;
+height: 800;
+display: inline-grid;
+margin-bottom: 50px;
+background-color: rgba(135, 207, 235, 0.419);
+box-shadow: rgb(0, 183, 255);
+border: black solid 2px;
+border-radius: 8px;
 }

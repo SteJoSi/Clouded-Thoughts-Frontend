@@ -1,6 +1,6 @@
 import React from 'react'
 
-function PostContainer({ post, onDeletePost, onUpdatedPost }) {
+function PostContainer({ post, users, onDeletePost, onUpdatedPost }) {
     function handleDeleteClick() {
         fetch(`http://localhost:9292/posts/${post.id}`, {
             method: "DELETE",
@@ -25,7 +25,7 @@ function PostContainer({ post, onDeletePost, onUpdatedPost }) {
     return (
         <div>
             <div id="entryContainer" key={post.id}>
-                <h3 className="username"><ion-icon name="person"></ion-icon>{post.user.username}</h3>
+                <h3 className="username"><ion-icon name="person"></ion-icon></h3>
                 <p className='postInfo'>Date: {post.date}</p>
                 <p className='postInfo'>Title: {post.title}</p>
                 <div className='postInfo'>{post.body}</div>

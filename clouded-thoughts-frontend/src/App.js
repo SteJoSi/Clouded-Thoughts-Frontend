@@ -61,9 +61,9 @@ function App() {
       <NavBar />
       <div>
         <Switch>
-          {/* <Route path="/users/:id">
+          <Route path="/users/:id">
             <UserShow users={users} />
-          </Route> */}
+          </Route>
 
           <Route path="/users">
             <Users users={users} />
@@ -78,7 +78,8 @@ function App() {
 
           <Route path="/posts">
             <Posts 
-              posts={posts}  
+              posts={posts} 
+              users={users} 
               onDeletePost={handleDeletePost} 
               onUpdatedPost={handleUpdatePost} 
             />
