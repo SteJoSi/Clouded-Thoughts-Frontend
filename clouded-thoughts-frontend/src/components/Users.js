@@ -17,12 +17,12 @@ function Users({ users }) {
             <Header />
             <h1 id="profileSubHeading">Welcome!</h1>
             <div id="userDiv">
-                {users.map((users) => (
+                {/* {users.map((users) => ( */}
                     <UserContainer 
-                        key={users.id}
+                        // key={users.id}
                         users={users}
                     />
-                ))}
+                {/* ))} */}
             </div>
         </div>
     )
