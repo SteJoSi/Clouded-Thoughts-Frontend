@@ -19,7 +19,7 @@ function Users({ users }) {
             <div id="userDiv">
                 {/* {users.map((users) => ( */}
                     <UserContainer 
-                        // key={users.id}
+                        key={users.id}
                         users={users}
                     />
                 {/* ))} */}

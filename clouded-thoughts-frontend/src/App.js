@@ -13,7 +13,7 @@ function App() {
   const [users, setUsersData] = useState([]);
   const [posts, setPostsData] = useState([]);
 
-  console.log('posts', posts)
+  // console.log('posts', posts)
   
   useEffect(() => {
     fetch("http://localhost:9292/users")
@@ -61,8 +61,8 @@ function App() {
       <NavBar />
       <div>
         <Switch>
-          <Route path="/users/:username">
-            <UserShow users={users} />
+          <Route path="/users/:id">
+            <UserShow users={users} posts={posts} />
           </Route>
 
           <Route path="/users">

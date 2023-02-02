@@ -20,7 +20,7 @@ function NewEntry({ addPost, users }) {
             user_id: user,
             body: body
         }
-        console.log('NewEntry', user)
+        // console.log('NewEntry', user)
         fetch("http://localhost:9292/posts", {
             method: "POST",
             headers: {
@@ -30,7 +30,7 @@ function NewEntry({ addPost, users }) {
         })
             .then((r) => r.json())
             .then((newPost) => {
-                console.log('new post', newPost)
+                // console.log('new post', newPost)
                 addPost(newPost)
                 history.push("/posts");
 

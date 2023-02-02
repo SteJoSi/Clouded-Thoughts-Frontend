@@ -176,7 +176,7 @@ textarea {
 .username:active{
   color: rgb(0, 183, 255)
 }
-
+/* 
 #userShow{
   padding: 10px 10px 20px;
   width: 600;
@@ -187,9 +187,9 @@ textarea {
   box-shadow: rgb(0, 183, 255);
   border: black solid 2px;
   border-radius: 8px;
-}
+} */
 
-.showUser{
+#showUser{
 padding: 10px 10px 20px;
 width: 600;
 height: 800;
