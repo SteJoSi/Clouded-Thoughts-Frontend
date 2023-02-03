@@ -10,13 +10,13 @@ function UserShow({ users }) {
         <div id="userShow">
             {users.filter(user => user.username === username).map((user) => (
                 <div key={user.id} className="showUser">
-                    <h1>{user.username}</h1>
-                    <p>{user.first_name}{user.last_name}</p>
-                    <p>{user.email}</p>
+                    <h1>Welcome {user.username}!</h1>
+                    <p>Name: {user.first_name} {user.last_name}</p>
+                    <p>Email: {user.email}</p>
                     {user.posts.map((post) =>
                         <>
-                            <h3>{post.title}</h3>
-                            <p>{post.body}</p>
+                            <h3>Title: {post.title}</h3>
+                            <p>Body: {post.body}</p>
                         </>
                     )}
                 </div>

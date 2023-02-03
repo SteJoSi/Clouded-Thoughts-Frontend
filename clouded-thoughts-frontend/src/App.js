@@ -61,7 +61,7 @@ function App() {
       <NavBar />
       <div>
         <Switch>
-          <Route path="/users/:id">
+          <Route path="/users/:username">
             <UserShow users={users} posts={posts} />
           </Route>
 
