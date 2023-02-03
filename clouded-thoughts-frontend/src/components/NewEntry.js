@@ -8,13 +8,12 @@ function NewEntry({ addPost, users }) {
     const [title, setTitle] = useState("")
     const [user, setUser] = useState("")
     const [body, setBody] = useState("")
-    // make drop down for users (select tag), list of users are 1 option tag
 
     const history = useHistory()
 
     function handleSubmit(e) {
         e.preventDefault()
-        const formData = {
+        const postFormData = {
             date: date,
             title: title,
             user_id: user,
@@ -26,14 +25,14 @@ function NewEntry({ addPost, users }) {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(formData),
+            body: JSON.stringify(postFormData),
         })
-            .then((r) => r.json())
+            .then((resp) => resp.json())
             .then((newPost) => {
                 // console.log('new post', newPost)
+                alert("You added a new post!")
                 addPost(newPost)
                 history.push("/posts");
-
             })
     }
 
@@ -46,13 +45,14 @@ function NewEntry({ addPost, users }) {
             <form id="newEntry" onSubmit={handleSubmit}>
                 <div>
                     <label>User: </label>
-                        <select value={user} onChange={(e) => setUser(e.target.value)} >
-                            {users.map((user) => {
-                                // console.log('user', user)
-                                return ( 
+                    <select value={user} onChange={(e) => setUser(e.target.value)} >
+                        {users.map((user) => {
+                            // console.log('user', user)
+                            return (
                                 <option value={user.id} key={user.id}>{user.username}</option>
-                            )})}
-                        </select>
+                            )
+                        })}
+                    </select>
                 </div>
                 <div>
                     <label>Date: </label>

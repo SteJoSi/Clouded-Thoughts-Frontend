@@ -45,7 +45,7 @@ function App() {
   }
 
   function handleUpdatePost(updatedPost) {
-    console.log("Update Post:", updatedPost);
+    // console.log("Update Post:", updatedPost);
     const updatedPosts = posts.map((post) => {
       if (post.id === updatedPost.id) {
         return updatedPost;

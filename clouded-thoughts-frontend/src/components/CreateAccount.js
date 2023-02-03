@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
-function CreateAccount({addUser}) {
+function CreateAccount({ addUser }) {
     const [firstName, setFirstName] = useState("")
     const [lastName, setLastName] = useState("")
     const [email, setEmail] = useState("")
@@ -26,19 +26,19 @@ function CreateAccount({addUser}) {
             },
             body: JSON.stringify(accountFormData),
         })
-            .then((r) => r.json())
+            .then((resp) => resp.json())
             .then((newUser) => {
-                console.log("user", newUser)
+                // console.log("user", newUser)
+                alert("New User Created!")
                 addUser(newUser)
-                history.push("/users");
-
             })
+        history.push("/users");
     }
-    
 
-  return (
-    <div>
-       <div id="accountTitle">
+
+    return (
+        <div>
+            <div id="accountTitle">
                 <h1>Sign Up Now!</h1>
             </div>
             <form id="account" onSubmit={handleFormSubmit}>
@@ -92,8 +92,8 @@ function CreateAccount({addUser}) {
                 </div>
             </form>
 
-    </div>
-  )
+        </div>
+    )
 }
 
 export default CreateAccount
