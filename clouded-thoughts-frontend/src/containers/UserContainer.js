@@ -5,7 +5,7 @@ function UserContainer({ users }) {
   // console.log("userContainer", users)
 
   return (
-    <div id="displayUser" key={users.id}>
+    <div key={users.id}>
       {users.map((user) => (
         <div id="displayUser">
           <Link to={`/users/${user.username}`} className="username"><ion-icon name="person"></ion-icon>{user.username}</Link>

@@ -15,14 +15,12 @@ function Users({ users }) {
     return (
         <div>
             <Header />
-            <h1 id="profileSubHeading">Welcome!</h1>
+            <h1 id="profileSubHeading">Please Select a User!</h1>
             <div id="userDiv">
-                {/* {users.map((users) => ( */}
                     <UserContainer 
                         key={users.id}
                         users={users}
                     />
-                {/* ))}  */}
             </div>
         </div>
     )

@@ -105,13 +105,13 @@ textarea {
   border-radius: 8px;
 }
 
-.postInfo{
+.postInfo {
   font-family: 'Amatic SC', cursive;
   font-size: 30px;
   margin: 5px;
 }
 
-.postBtn{
+.postBtn {
   background: none;
   /* display: flex;
   margin: auto;
@@ -142,7 +142,7 @@ textarea {
   text-align: center;
 }
 
-#displayUser{
+#displayUser {
   text-align: center;
   margin: 20px;
   font-family: 'Amatic SC', cursive;
@@ -158,26 +158,30 @@ textarea {
 
 }
 
-#userDiv{
+#userDiv {
   display: flex;
   align-items: center;
   justify-content: space-around;
   align-content: stretch;
   flex-direction: column;
 }
-.username{
+
+.username {
   color: black;
 }
 
-.username:hover{
+.username:hover {
   color: white
 }
 
-.username:active{
+.username:active {
   color: rgb(0, 183, 255)
 }
-/* 
+
 #userShow{
+  font-family: 'Amatic SC', cursive;
+  font-size: 40px;
+  text-align: center;
   padding: 10px 10px 20px;
   width: 600;
   height: 800;
@@ -187,16 +191,31 @@ textarea {
   box-shadow: rgb(0, 183, 255);
   border: black solid 2px;
   border-radius: 8px;
-} */
+}
 
-#showUser{
-padding: 10px 10px 20px;
-width: 600;
-height: 800;
-display: inline-grid;
-margin-bottom: 50px;
-background-color: rgba(135, 207, 235, 0.419);
-box-shadow: rgb(0, 183, 255);
-border: black solid 2px;
-border-radius: 8px;
+#displayPosts {
+  padding: 10px 10px 20px;
+  width: 600;
+  height: 800;
+  display: inline-grid;
+  margin-bottom: 50px;
+  background-color: rgba(135, 207, 235, 0.419);
+  box-shadow: rgb(0, 183, 255);
+  border: black solid 2px;
+  border-radius: 8px;
+  font-family: 'Amatic SC', cursive;
+  font-size: 30px;
+
+  justify-content: space-around;
+  align-content: stretch;
+  flex-direction: column;
+
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 10px;
+
+  grid-row-gap: 0px;
+  padding: 5px;
+  column-gap: 1rem;
+  row-gap: 1rem;
 }
