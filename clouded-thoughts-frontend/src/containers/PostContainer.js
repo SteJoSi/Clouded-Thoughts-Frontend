@@ -1,6 +1,6 @@
 import React from 'react'
 
-function PostContainer({ post, users, onDeletePost, onUpdatedPost }) {
+function PostContainer({ post, onDeletePost, onUpdatedPost }) {
     function handleDeleteClick() {
         fetch(`http://localhost:9292/posts/${post.id}`, {
             method: "DELETE",

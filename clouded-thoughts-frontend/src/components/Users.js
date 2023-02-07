@@ -17,10 +17,10 @@ function Users({ users }) {
             <Header />
             <h1 id="profileSubHeading">Please Select a User!</h1>
             <div id="userDiv">
-                    <UserContainer 
-                        key={users.id}
-                        users={users}
-                    />
+                <UserContainer
+                    key={users.id}
+                    users={users}
+                />
             </div>
         </div>
     )

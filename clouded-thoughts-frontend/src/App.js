@@ -14,7 +14,7 @@ function App() {
   const [posts, setPostsData] = useState([]);
 
   // console.log('posts', posts)
-  
+
   useEffect(() => {
     fetch("http://localhost:9292/users")
       .then(resp => resp.json())
@@ -62,7 +62,10 @@ function App() {
       <div>
         <Switch>
           <Route path="/users/:username">
-            <UserShow users={users} posts={posts} />
+            <UserShow
+              users={users}
+              posts={posts}
+            />
           </Route>
 
           <Route path="/users">
@@ -70,18 +73,18 @@ function App() {
           </Route>
 
           <Route path="/newEntry">
-            <NewEntry 
-              addPost={addPost} 
-              users={users} 
+            <NewEntry
+              addPost={addPost}
+              users={users}
             />
           </Route>
 
           <Route path="/posts">
-            <Posts 
-              posts={posts} 
-              users={users} 
-              onDeletePost={handleDeletePost} 
-              onUpdatedPost={handleUpdatePost} 
+            <Posts
+              posts={posts}
+              users={users}
+              onDeletePost={handleDeletePost}
+              onUpdatedPost={handleUpdatePost}
             />
           </Route>
 

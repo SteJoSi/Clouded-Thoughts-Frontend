@@ -3,8 +3,6 @@ import { useParams } from 'react-router-dom';
 import Header from './Header';
 
 function UserShow({ users }) {
-    // console.log("users", users)
-
     const { username } = useParams()
 
     return (

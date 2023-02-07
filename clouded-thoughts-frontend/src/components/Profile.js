@@ -10,7 +10,6 @@ function Profile() {
             <div>
             <PostContainer />
             </div>
-            {/* display all posts for user here */}
         </div>
     )
 }
