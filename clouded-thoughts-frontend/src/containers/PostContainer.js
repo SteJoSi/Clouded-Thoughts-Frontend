@@ -9,6 +9,7 @@ function PostContainer({ post, onDeletePost, onUpdatedPost }) {
             .then(() => onDeletePost(post));
     }
 
+
     function handleEditPost() {
         fetch(`http://localhost:9292/posts/${post.id}`, {
             method: "PATCH",
@@ -16,6 +17,7 @@ function PostContainer({ post, onDeletePost, onUpdatedPost }) {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
+                title: post.title
             }),
         })
             .then((r) => r.json())
