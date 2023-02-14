@@ -19,7 +19,6 @@ function NewEntry({ addPost, users }) {
             user_id: user,
             body: body
         }
-        // console.log('NewEntry', user)
         fetch("http://localhost:9292/posts", {
             method: "POST",
             headers: {
@@ -29,7 +28,6 @@ function NewEntry({ addPost, users }) {
         })
             .then((resp) => resp.json())
             .then((newPost) => {
-                // console.log('new post', newPost)
                 alert("You added a new post!")
                 addPost(newPost)
                 history.push("/posts");
@@ -47,7 +45,6 @@ function NewEntry({ addPost, users }) {
                     <label>User: </label>
                     <select value={user} onChange={(e) => setUser(e.target.value)} >
                         {users.map((user) => {
-                            // console.log('user', user)
                             return (
                                 <option value={user.id} key={user.id}>{user.username}</option>
                             )

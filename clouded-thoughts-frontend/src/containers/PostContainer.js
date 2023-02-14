@@ -1,6 +1,7 @@
 import React from 'react';
 
 function PostContainer({ post, onDeletePost, onUpdatedPost }) {
+
     function handleDeleteClick() {
         fetch(`http://localhost:9292/posts/${post.id}`, {
             method: "DELETE",
@@ -17,7 +18,9 @@ function PostContainer({ post, onDeletePost, onUpdatedPost }) {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                title: post.title
+                date: post.date,
+                title: post.title,
+                body: post.body
             }),
         })
             .then((r) => r.json())
