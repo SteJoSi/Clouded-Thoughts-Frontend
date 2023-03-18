@@ -8,6 +8,7 @@ import Posts from './components/Posts';
 import Users from './components/Users';
 import NewEntry from './components/NewEntry';
 import UserShow from './components/UserShow';
+import EditPost from './components/EditPost';
 
 function App() {
   const [users, setUsersData] = useState([]);
@@ -31,27 +32,82 @@ function App() {
   }, []);
 
   function addUser(newUser) {
+    console.log("addUser", newUser)
+    const updatedUser = users.map(user => {
+      if (user.id === newUser.id) {
+        return {
+          ...posts,
+          users: [...user, newUser]
+        }
+      } else {
+        return user
+      }
+    })
+    setPostsData(updatedUser)
     setUsersData([newUser, ...users])
   }
 
   function addPost(newPost) {
+    // console.log("new post", newPost)
+    const updatedUsers = users.map(user => {
+      if (user.id === newPost.user_id) {
+        return {
+          ...user,
+          posts: [...user.posts, newPost]
+        }
+      } else {
+        return user
+      }
+    })
+    setUsersData(updatedUsers)
     setPostsData([newPost, ...posts])
   }
 
+
   function handleDeletePost(deletedPost) {
-    const updatedPosts = posts.filter((post) => post.id !== deletedPost.id);
+    const updatedUsers = users.map(user => {
+      if (user.id === deletedPost.user_id) {
+        return {
+          ...user,
+          posts: user.posts.filter((post) => post.id !== deletedPost.id)
+        }
+      } else {
+        return user
+      }
+    })
+    const updatedPosts = posts.filter((post) => post.id !== deletedPost.id)
+    setUsersData(updatedUsers);
     setPostsData(updatedPosts);
   }
 
   function handleUpdatePost(updatedPost) {
+    console.log("updated Post", updatedPost)
+
     const updatedPosts = posts.map((post) => {
+      if (post.id === updatedPost.post_id) {
+        return {
+          ...post,
+          users: users.posts.map((post) => {
+            if (post.id === updatedPost.id) {
+              return updatedPost;
+            } else {
+              return users;
+            }
+          })
+        };
+      } else {
+        return post;
+      }
+    })
+    const updatedPostsComponents = posts.map((post) => {
       if (post.id === updatedPost.id) {
         return updatedPost;
       } else {
         return post;
       }
-    });
+    })
     setPostsData(updatedPosts);
+    setUsersData(updatedPostsComponents)
   }
 
   return (
@@ -62,7 +118,6 @@ function App() {
           <Route path="/users/:username">
             <UserShow
               users={users}
-              posts={posts}
             />
           </Route>
 
@@ -84,6 +139,13 @@ function App() {
               onDeletePost={handleDeletePost}
               onUpdatedPost={handleUpdatePost}
             />
+          </Route>
+
+          <Route path="/posts/:id/edit">
+              <EditPost 
+              handleUpdatePost={handleUpdatePost}
+              posts={posts}
+              />
           </Route>
 
           <Route exact path="/">

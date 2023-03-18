@@ -18,8 +18,6 @@ function PostContainer({ post, onDeletePost, onUpdatedPost }) {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                date: post.date,
-                title: post.title,
                 body: post.body
             }),
         })
@@ -30,11 +28,12 @@ function PostContainer({ post, onDeletePost, onUpdatedPost }) {
     return (
         <div>
             <div id="entryContainer" key={post.id}>
-                <h3 className="username"><ion-icon name="person"></ion-icon></h3>
+                <h3 className="username"><ion-icon name="person"></ion-icon>{post.user.username}</h3>
                 <p className='postInfo'>Date: {post.date}</p>
                 <p className='postInfo'>Title: {post.title}</p>
                 <div className='postInfo'>{post.body}</div>
-                <button className='postBtn' onClick={handleEditPost}><ion-icon name="pencil"></ion-icon></button><button className='postBtn' onClick={handleDeleteClick}><ion-icon name="trash"></ion-icon></button>
+                <button className='postBtn' onClick={handleEditPost}><ion-icon name="pencil"></ion-icon> Edit Post</button>
+                <button className='postBtn' onClick={handleDeleteClick}><ion-icon name="trash"></ion-icon> Delete Post</button>
             </div>
         </div>
     )
