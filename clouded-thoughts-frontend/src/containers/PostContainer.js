@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 
-
-
 function PostContainer({ post, onDeletePost, onUpdatedPost }) {
-
     const [updatedBody, setUpdatedBody] = useState(post.body)
     const [isClicked, setIsClicked] = useState(false)
 
@@ -47,7 +44,7 @@ function PostContainer({ post, onDeletePost, onUpdatedPost }) {
                 <div className='postInfo'>{post.body}</div>
                 <button className='postBtn' onClick={toggleIsClicked}><ion-icon name="pencil"></ion-icon> Edit Post</button>
                 <button className='postBtn' onClick={handleDeleteClick}><ion-icon name="trash"></ion-icon> Delete Post</button>
-                
+
                 {isClicked ? (
                     <form onSubmit={handleEditPost}>
                         <input type="body" value={updatedBody} onChange={(e) => setUpdatedBody(e.target.value)} />

@@ -47,7 +47,6 @@ function App() {
   }
 
   function addPost(newPost) {
-    // console.log("new post", newPost)
     const updatedUsers = users.map(user => {
       if (user.id === newPost.user_id) {
         return {
@@ -80,7 +79,6 @@ function App() {
   }
 
   function handleUpdatePost(updatedPost) {
-    // console.log("updated Post", updatedPost)
 
     const updatedPosts = posts.map((post) => {
       if (post.id === updatedPost.post_id) {
