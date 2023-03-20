@@ -1,6 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+
 
 function PostContainer({ post, onDeletePost, onUpdatedPost }) {
+
+    const [updatedBody, setUpdatedBody] = useState(post.body)
+    const [isClicked, setIsClicked] = useState(false)
+
+    const toggleIsClicked = () => {
+        setIsClicked(() => !isClicked)
+    }
 
     function handleDeleteClick() {
         fetch(`http://localhost:9292/posts/${post.id}`, {
@@ -10,19 +19,23 @@ function PostContainer({ post, onDeletePost, onUpdatedPost }) {
             .then(() => onDeletePost(post));
     }
 
+    function handleEditPost(e) {
+        e.preventDefault()
 
-    function handleEditPost() {
         fetch(`http://localhost:9292/posts/${post.id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                body: post.body
+                "body": updatedBody,
             }),
         })
             .then((r) => r.json())
-            .then((updatedPost) => onUpdatedPost(updatedPost));
+            .then((updatedPost) => {
+                onUpdatedPost(updatedPost)
+                toggleIsClicked()
+            })
     }
 
     return (
@@ -32,8 +45,17 @@ function PostContainer({ post, onDeletePost, onUpdatedPost }) {
                 <p className='postInfo'>Date: {post.date}</p>
                 <p className='postInfo'>Title: {post.title}</p>
                 <div className='postInfo'>{post.body}</div>
-                <button className='postBtn' onClick={handleEditPost}><ion-icon name="pencil"></ion-icon> Edit Post</button>
+                <button className='postBtn' onClick={toggleIsClicked}><ion-icon name="pencil"></ion-icon> Edit Post</button>
                 <button className='postBtn' onClick={handleDeleteClick}><ion-icon name="trash"></ion-icon> Delete Post</button>
+                
+                {isClicked ? (
+                    <form onSubmit={handleEditPost}>
+                        <input type="body" value={updatedBody} onChange={(e) => setUpdatedBody(e.target.value)} />
+
+                        <button className='postBtn' type="submit">Post Updated!</button>
+                    </form>
+
+                ) : null}
             </div>
         </div>
     )

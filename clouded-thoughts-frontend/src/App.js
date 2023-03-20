@@ -8,7 +8,6 @@ import Posts from './components/Posts';
 import Users from './components/Users';
 import NewEntry from './components/NewEntry';
 import UserShow from './components/UserShow';
-import EditPost from './components/EditPost';
 
 function App() {
   const [users, setUsersData] = useState([]);
@@ -81,7 +80,7 @@ function App() {
   }
 
   function handleUpdatePost(updatedPost) {
-    console.log("updated Post", updatedPost)
+    // console.log("updated Post", updatedPost)
 
     const updatedPosts = posts.map((post) => {
       if (post.id === updatedPost.post_id) {
@@ -139,13 +138,6 @@ function App() {
               onDeletePost={handleDeletePost}
               onUpdatedPost={handleUpdatePost}
             />
-          </Route>
-
-          <Route path="/posts/:id/edit">
-              <EditPost 
-              handleUpdatePost={handleUpdatePost}
-              posts={posts}
-              />
           </Route>
 
           <Route exact path="/">
